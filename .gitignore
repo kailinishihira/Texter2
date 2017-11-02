@@ -1,3 +1,6 @@
+EnvironmentVariables/
+
+
 # Autosave files
 *~
 
@@ -39,4 +42,3 @@ Thumbs.db
 # dotCover
 *.dotCover
 
-EnvironmentVariables
