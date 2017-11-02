@@ -1,0 +1,29 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+
+<h1>Edit @Html.DisplayFor(model => Model.Name)</h1>
+
+
+@using (Html.BeginForm())
+{
+    <div class="well">
+        <div class="form-group row">
+            <label class="col-md-2">Name:</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new {@class="form-control"})
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2">Phone Number:</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PhoneNumber, new {@class="form-control"})
+            </div>
+        </div>
+        <input type="submit" value="Update" class="btn btn-default" />
+    </div>
+}
+
+    <p class="back">@Html.ActionLink("Back to Details", "Details", new{ contactId = Model.ContactId })</p>

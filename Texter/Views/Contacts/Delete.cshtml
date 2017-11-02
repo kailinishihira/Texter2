@@ -1,0 +1,18 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Delete Contact";
+}
+
+<h1>Delete Contact</h1>
+
+<h4>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h4>
+
+<p class="back">@Html.ActionLink("Back to Details", "Details", new{ contactId = Model.ContactId})</p>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.ContactId)
+        <input type="submit" value="Delete" class="btn btn-default" />
+    }

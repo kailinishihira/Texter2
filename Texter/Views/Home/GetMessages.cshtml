@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Texter.Models.Message>
+
+<h2>All Messages</h2>
+
+<hr />
+
+<ol>
+    @foreach (var message in Model)
+    {
+        <li>
+            <ul>
+                <li>To: @Html.DisplayFor(modelItem => message.To)</li>
+                <li>From: @Html.DisplayFor(modelItem => message.From)</li>
+                <li>Body: @Html.DisplayFor(modelItem => message.Body)</li>
+                <li>Status: @Html.DisplayFor(modelItem => message.Status)</li>
+            </ul>
+        </li>
+    }
+</ol>
+
+@Html.ActionLink("Back home", "Index")

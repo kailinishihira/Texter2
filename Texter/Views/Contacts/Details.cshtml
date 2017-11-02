@@ -1,0 +1,30 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact Details";
+}
+
+<h1>@Html.DisplayFor(model => model.Name) Details</h1>
+
+<p class="crud">@Html.ActionLink("Edit", "Edit", new{ contactId = Model.ContactId }) | @Html.ActionLink("Delete", "Delete", new{ contactId = Model.ContactId })</p>
+
+
+<p class="back">@Html.ActionLink("Back to Contacts List", "Index")</p>
+
+<div class="well">
+    <div class="contact-details">
+        <h3>@Html.DisplayFor(model => model.Name)</h3>
+        <p>Phone Number: @Html.DisplayFor(model => model.PhoneNumber)</p>
+    </div>
+</div>
+
+<div class="well">
+    <form asp-action="NewMessage" class="new-message">
+	<input type="hidden" name="sendTo" value="@Model.PhoneNumber"/>
+    <input type="hidden" name="sentFrom" value="+18082013905"/>
+    <label for="messageBody">Message: </label>
+	<textarea type="text" name="messageBody" rows="5" cols="50"></textarea>
+	<br>	
+    <button type="submit" class="btn btn-default">Send</button>
+	</form>
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Texter.Models.Contact>
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+
+<h1 class="title">Contacts</h1>
+
+<p class="add">@Html.ActionLink("Add New Contact", "Create")</p>
+
+
+    @foreach(var contact in Model)
+    {   
+        <div class="well">
+            <h4>@Html.ActionLink((string)contact.Name, "Details", new{ contactId = contact.ContactId})</h4>
+        </div>
+    }
